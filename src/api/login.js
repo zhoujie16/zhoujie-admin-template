@@ -2,9 +2,10 @@ import request from '@/utils/request'
 
 export function login(username, password) {
   return request({
-    url: '/user/login',
-    method: 'post',
-    data: {
+    // url: '/user/login',
+		url:'/api/admin/user_login',
+    method: 'get',
+    params: {
       username,
       password
     }
@@ -13,7 +14,8 @@ export function login(username, password) {
 
 export function getInfo(token) {
   return request({
-    url: '/user/info',
+    // url: '/user/info',
+		url:'/api/admin/user_info',
     method: 'get',
     params: { token }
   })
@@ -21,7 +23,7 @@ export function getInfo(token) {
 
 export function logout() {
   return request({
-    url: '/user/logout',
+    url: '/api/admin/user_logout',
     method: 'post'
   })
 }
